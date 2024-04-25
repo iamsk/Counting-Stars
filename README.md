@@ -13,17 +13,43 @@
 
 </div>
 
-
-![explain](supplementary/explain.png)
+<p align="center">
+<img src="supplementary/explain.png" width = "90%" />
+</p>
 
 ## Note
 
 We'd like to encourage you to test the Counting-Stars using
-- Counting_Stars_32_32.jsonl
 - Counting_Stars_Random_32_32.jsonl
 
 , the standard version of the Counting-Stars. Notably, only testing the first one is enough because the second is more difficult than the first one.
 The figure above may help you understand the idea of the Counting-Stars, including the meaning of the parameters **M** and **N**.
+
+#### 2024.04.24
+
+文章还在继续增加实验和改进的阶段，后续会有各种各样的更新，期待与有想法的人一起讨论！
+
+关于中文测试，我们已经将带有描述数星星的句子扩充到1024条（即M=[32,64,128,256,512,1024]），并构建了随机打乱的星星数量，可以支持对1M长文的测试。
+
+此外，补充阶跃星辰（step-1-200k）在中文数星星上的实验（星星数量是打乱的）：
+
+<p align="center">
+<img src="supplementary/stepchat.png" width = "90%" />
+</p>
+
+由于网页端输入长度被限制在100K，因此我们尝试将测试内容存成txt，通过人工上传文件的方法进行测试，获得了最终结果。因此，参数也全都是默认参数。有一说一，StepChat的效果很好。
+
+<p align="center">
+<img src="supplementary/test_method.png" width = "60%" />
+</p>
+
+同时，补充GLM-4（glm-4）在中文数星星上的实验（星星数量是打乱的）：
+
+<p align="center">
+<img src="supplementary/glm4.png" width = "90%" />
+</p>
+
+GLM-4的temperature参数无法设置成0，因此在实验时，和StepChat相同，直接采用默认参数。
 
 #### 2024.03.28
 
@@ -71,7 +97,9 @@ The figure above may help you understand the idea of the Counting-Stars, includi
 - **Shuffled**: [15, 117, 42, 69, 58, 107, 9, 49, 113, 66, 26, 102, 81, 94, 77, 61, 5, 19, 109, 3, 35, 54, 86, 89, 127, 21, 46, 122, 38, 97, 74, 29]
 - GPT4和KIMI的测试结果如下图。
 
-![stone_gpt4_kimi_32_32_random](supplementary/stone_gpt4_kimi_32_32_random.png)
+<p align="center">
+<img src="supplementary/stone_gpt4_kimi_32_32_random.png" width = "90%" />
+</p>
 
 - 综上，我们认为打乱顺序可以作为一个更难的版本（这个实验在论文中已增加）。
 
